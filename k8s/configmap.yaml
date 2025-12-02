@@ -1,0 +1,32 @@
+# k8s/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rag-config
+  namespace: rag-application
+data:
+  # Application Configuration
+  PORT: "8000"
+  LOG_LEVEL: "INFO"
+  
+  # Azure Configuration (non-sensitive)
+  AZURE_REGION: "<YOUR_AZURE_REGION>"  # e.g., eastus
+  AZURE_STORAGE_CONTAINER_NAME: "pdf-documents"
+  AZURE_SEARCH_INDEX_NAME: "rag-documents"
+  
+  # Embedding Configuration
+  USE_AZURE_OPENAI: "true"
+  AZURE_OPENAI_API_VERSION: "2024-02-01"
+  AZURE_OPENAI_EMBEDDING_DEPLOYMENT: "text-embedding-ada-002"
+  VECTOR_DIMENSIONS: "1536"
+  
+  # Alternative: Local Embedding Model
+  # USE_AZURE_OPENAI: "false"
+  # EMBEDDING_MODEL: "all-MiniLM-L6-v2"
+  
+  # PDF Processing
+  CHUNK_SIZE: "1000"
+  CHUNK_OVERLAP: "200"
+  
+  # Authentication
+  USE_MANAGED_IDENTITY: "true"
