@@ -47,8 +47,8 @@ chmod +x scripts/deploy.sh
 ./scripts/deploy.sh
 
 ### 4. Update Kubernetes Secrets
+### Edit k8s/secret.yaml with your Azure resource credentials:
 
-Edit k8s/secret.yaml with your Azure resource credentials:
 AZURE_STORAGE_CONNECTION_STRING: "<your-value>"
 AZURE_SEARCH_API_KEY: "<your-value>"
 AZURE_OPENAI_API_KEY: "<your-value>"
